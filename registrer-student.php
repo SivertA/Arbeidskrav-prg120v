@@ -4,7 +4,7 @@
  * Viser et skjema og registrerer studenter i databasen.
  */
 
-require_once("db-tilkobling.php");
+require_once(__DIR__ . "/db-tilkobling.php");
 mysqli_set_charset($db, "utf8mb4");
 
 $melding = "";
