@@ -28,24 +28,37 @@ $sqlResultat = mysqli_query($db, $sqlSetning);
     <table>
         <thead>
             <tr>
-                <th scope="col">Klassekode</th>
-                <th scope="col">Klassenavn</th>
-                <th scope="col">Studiumkode</th>
+                <th scope="col">brukernavn</th>
+                <th scope="col">fornavn</th>
+                <th scope="col">etternavn</th>
+                <th scope="col">klassekode</th>
             </tr>
         </thead>
         <tbody>
-            <?php while ($klasse = mysqli_fetch_assoc($sqlResultat)): ?>
+            <?php while ($student = mysqli_fetch_assoc($sqlResultat)): ?>
                 <tr>
                     <td><?= htmlspecialchars(
-                        $klasse["klassekode"], ENT_QUOTES, "UTF-8"
+                        $student["brukernavn"], ENT_QUOTES, "UTF-8"
                     ) ?></td>
 
                     <td><?= htmlspecialchars(
-                        $klasse["klassenavn"], ENT_QUOTES, "UTF-8"
+                        $student["fornavn"], ENT_QUOTES, "UTF-8"
+                    ) ?></td>
+
+                    <td><?= htmlspecialchars(
+                        $student["etternavn"], ENT_QUOTES, "UTF-8"
+                    ) ?></td>
+
+                    <td><?= htmlspecialchars(
+                        $student["klassekode"], ENT_QUOTES, "UTF-8"
                     ) ?></td>
 
                     <td><?= htmlspecialchars(
                         $klasse["studiumkode"], ENT_QUOTES, "UTF-8"
+                    ) ?></td>
+
+                    <td><?= htmlspecialchars(
+                        $student["brukernavn"], ENT_QUOTES, "UTF-8"
                     ) ?></td>
                 </tr>
             <?php endwhile; ?>
