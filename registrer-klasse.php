@@ -99,6 +99,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     }
 }
 ?>
-
+<p><a href="index.html">Tilbake til hovedsiden</a></p>
 </body>
 </html>
