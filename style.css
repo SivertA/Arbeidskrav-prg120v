@@ -1,0 +1,226 @@
+/* Farger og felles innstillinger */
+:root {
+    color-scheme: dark;
+    --bakgrunn: #0f172a;
+    --flate: #1e293b;
+    --felt: #111c30;
+    --tekst: #f1f5f9;
+    --dempet: #cbd5e1;
+    --kant: #475569;
+    --aksent: #38bdf8;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+    background: var(--bakgrunn);
+}
+
+body {
+    width: min(900px, calc(100% - 32px));
+    margin: 60px auto;
+    padding: clamp(24px, 5vw, 48px);
+    background: var(--flate);
+    color: var(--tekst);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height: 1.6;
+    border: 1px solid var(--kant);
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgb(0 0 0 / 25%);
+}
+
+/* Overskrifter */
+h1,
+h2,
+h3 {
+    margin-top: 0;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+}
+
+h2,
+h3 {
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+    margin-bottom: 28px;
+}
+
+p {
+    color: var(--dempet);
+}
+
+/* Lenker */
+a {
+    color: var(--aksent);
+    text-underline-offset: 4px;
+}
+
+a:hover {
+    color: #bae6fd;
+}
+
+/* Menyen på hovedsiden */
+ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    padding: 0;
+    list-style: none;
+}
+
+li a {
+    display: flex;
+    align-items: center;
+    min-height: 76px;
+    padding: 18px 22px;
+    background: var(--felt);
+    border: 1px solid var(--kant);
+    border-radius: 12px;
+    color: var(--tekst);
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 150ms, border-color 150ms;
+}
+
+li a:hover {
+    background: #253750;
+    border-color: var(--aksent);
+    color: var(--tekst);
+}
+
+/* Skjemaer */
+form {
+    max-width: 560px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+input[type="text"],
+select {
+    display: block;
+    width: 100%;
+    min-height: 48px;
+    margin-bottom: 20px;
+    padding: 12px 14px;
+    background: var(--felt);
+    color: var(--tekst);
+    border: 1px solid var(--kant);
+    border-radius: 10px;
+    font: inherit;
+}
+
+input[type="text"]:focus,
+select:focus {
+    border-color: var(--aksent);
+}
+
+/* CSS styrer avstanden i stedet for br-elementene */
+form br {
+    display: none;
+}
+
+/* Knapper */
+input[type="submit"],
+input[type="reset"],
+button {
+    min-height: 46px;
+    margin: 6px 8px 6px 0;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+input[type="submit"],
+button {
+    background: var(--aksent);
+    color: #082f49;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: #7dd3fc;
+}
+
+input[type="reset"] {
+    background: transparent;
+    color: var(--tekst);
+    border-color: var(--kant);
+}
+
+input[type="reset"]:hover {
+    background: #334155;
+}
+
+/* Egne farger for sletteknappene */
+#slettStudentKnapp,
+#slettKlasseKnapp {
+    background: #fda4af;
+    color: #4c0519;
+}
+
+#slettStudentKnapp:hover,
+#slettKlasseKnapp:hover {
+    background: #fecdd3;
+}
+
+/* Tabeller */
+table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 24px 0;
+}
+
+th,
+td {
+    padding: 16px 20px;
+    text-align: left;
+    border-bottom: 1px solid var(--kant);
+}
+
+th {
+    background: var(--felt);
+    color: var(--aksent);
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+tbody tr:hover {
+    background: rgb(56 189 248 / 6%);
+}
+
+/* Synlig tastaturnavigasjon */
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--aksent);
+    outline-offset: 4px;
+}
+
+/* Mobil */
+@media (max-width: 600px) {
+    body {
+        margin: 24px auto;
+    }
+
+    ul {
+        grid-template-columns: 1fr;
+    }
+
+    th,
+    td {
+        padding: 12px;
+    }
+}
