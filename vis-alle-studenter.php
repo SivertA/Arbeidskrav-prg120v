@@ -4,7 +4,7 @@
 require_once(__DIR__ . "/db-tilkobling.php");
 mysqli_set_charset($db, "utf8mb4");
 
-$sqlSetning = "SELECT BRUKERNAVN, FORNAVN, ETTERNAVN, KLASSEKODE
+$sqlSetning = "SELECT brukernavn, fornavn, etternavn, klassekode
               FROM student
               ORDER BY brukernavn";
 
@@ -51,14 +51,6 @@ $sqlResultat = mysqli_query($db, $sqlSetning);
 
                     <td><?= htmlspecialchars(
                         $student["klassekode"], ENT_QUOTES, "UTF-8"
-                    ) ?></td>
-
-                    <td><?= htmlspecialchars(
-                        $klasse["studiumkode"], ENT_QUOTES, "UTF-8"
-                    ) ?></td>
-
-                    <td><?= htmlspecialchars(
-                        $student["brukernavn"], ENT_QUOTES, "UTF-8"
                     ) ?></td>
                 </tr>
             <?php endwhile; ?>
